@@ -1,0 +1,16 @@
+node_modules
+package-lock.json
+.env
+.env.sample
+./src/public/uploads/
+./public/uploads/
+src/public/uploads
+public/uploads
+src/backup
+.src
+logs
+serviceAccount.json
+migrations
+public/reports
+public/search-reports
+/config

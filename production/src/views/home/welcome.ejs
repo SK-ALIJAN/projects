@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SyncTalk – Backend Ready</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 48px 40px;
+        text-align: center;
+        max-width: 420px;
+        width: 90%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .logo {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        opacity: 0.85;
+        margin-bottom: 32px;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background: #10b981;
+        border-radius: 50%;
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.4);
+          opacity: 0.6;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .message {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+        opacity: 0.95;
+      }
+
+      .footer {
+        font-size: 12px;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="logo">SyncTalk</div>
+      <div class="subtitle">Real-time Communication Backend</div>
+
+      <div class="status">
+        <span class="dot"></span>
+        Server is running
+      </div>
+
+      <p class="message">
+        All set and ready 🚀<br />
+        Your SyncTalk backend is up and running successfully.
+      </p>
+
+      <div class="footer">
+        © <%= new Date().getFullYear() %> SyncTalk
+      </div>
+    </div>
+  </body>
+</html>
