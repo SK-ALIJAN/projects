@@ -14,6 +14,7 @@ import NotFound from '../features/404/pages/404';
 const Home = lazy(() => import('../features/home/pages/Home'));
 const Login = lazy(() => import('../features/auth/pages/login/Login'));
 const Register = lazy(() => import('../features/auth/pages/register/Register'));
+const Unauthorized = lazy(() => import('../features/auth/pages/Unauthorized'));
 
 
 const AppRoutes = () => {
@@ -24,6 +25,7 @@ const AppRoutes = () => {
                 {/* Public */}
                 <Route element={<MainLayout />}>
                     <Route path={ROUTES.HOME} element={<Home />} />
+                    <Route path={ROUTES.UNAUTHORIZED} element={<Unauthorized />} />
                 </Route>
 
                 {/* Guest */}
