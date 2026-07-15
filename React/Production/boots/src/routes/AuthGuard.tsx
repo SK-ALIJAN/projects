@@ -1,11 +1,12 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { ROUTES } from './routePaths';
+import { useAppSelector } from '../store/store';
 
 const AuthGuard = () => {
-    const isLogin = false; // this should be replace with redux or context api
+    const { isAuthenticated } = useAppSelector((state) => state.auth);
     const location = useLocation();
 
-    if (isLogin) {
+    if (!isAuthenticated) {
         return <Navigate to={ROUTES.SIGN_IN} state={{ from: location }} replace />;
     }
 

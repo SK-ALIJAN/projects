@@ -3,9 +3,9 @@ import { Suspense, lazy } from 'react';
 
 import MainLayout from '../layouts/MainLayout';
 import AuthLayout from '../layouts/AuthLayout';
-import AdminLayout from '../layouts/AdminLayout';
+// import AdminLayout from '../layouts/AdminLayout';
 
-import AdminGuard from './AdminGuard';
+// import AdminGuard from './AdminGuard';
 import GuestGuard from './GuestGuard';
 import { ROUTES } from './routePaths';
 import NotFound from '../features/404/pages/404';

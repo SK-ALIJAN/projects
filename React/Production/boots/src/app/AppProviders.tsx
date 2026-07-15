@@ -1,4 +1,8 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { App as AntdApp } from 'antd';
+import { HelmetProvider } from 'react-helmet-async';
+import { store } from '../store/store';
 import { ThemeProvider } from '../contexts/ThemeContext';
 import { LanguageProvider } from '../contexts/LanguageContext';
 import ErrorBoundary from '../components/feedback/error/ErrorBoundary';
@@ -13,19 +17,23 @@ interface Props {
 
 const AppProviders: React.FC<Props> = ({ children }) => {
     return (
-        <ErrorBoundary> {/* Catches JavaScript runtime/rendering errors */}
-            {/* <ToastProvider> Provides global toast/notification system */}
-            <ThemeProvider> {/* Provides global theme (dark/light, design tokens) */}
-                <LanguageProvider> {/* Provides application-wide i18n / localization */}
-                    <GlobalErrorProvider> {/* Manages global HTTP/API error state */}
-                        <GlobalErrorView /> {/* Renders custom UI for critical API errors */}
-                        <ToastProvider />
-                        {children} {/* Main application content (routes/layouts/pages) */}
-                    </GlobalErrorProvider>
-                </LanguageProvider>
-            </ThemeProvider>
-            {/* </ToastProvider> */}
-        </ErrorBoundary>
+        <Provider store={store}>
+            <HelmetProvider>
+                <AntdApp>
+                    <ErrorBoundary> {/* Catches JavaScript runtime/rendering errors */}
+                        <ThemeProvider> {/* Provides global theme (dark/light, design tokens) */}
+                            <LanguageProvider> {/* Provides application-wide i18n / localization */}
+                                <GlobalErrorProvider> {/* Manages global HTTP/API error state */}
+                                    <GlobalErrorView /> {/* Renders custom UI for critical API errors */}
+                                    <ToastProvider />
+                                    {children} {/* Main application content (routes/layouts/pages) */}
+                                </GlobalErrorProvider>
+                            </LanguageProvider>
+                        </ThemeProvider>
+                    </ErrorBoundary>
+                </AntdApp>
+            </HelmetProvider>
+        </Provider>
     );
 };
 

@@ -28,7 +28,7 @@ class ErrorHandler {
             const formatted = Object.entries(data.errors)
                 .map(([field, errors]) => {
                     const label = field.replace(/_/g, " ");
-                    return `${label}: ${errors.join(", ")}`;
+                    return `${label}: ${(errors as string[]).join(", ")}`;
                 })
                 .join("\n");
 

@@ -1,0 +1,47 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  background-color: var(--card-bg, #fff);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--text, #374151);
+}
+
+.thead {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.th {
+  padding: 12px 16px;
+  font-weight: 600;
+  color: var(--text, #111827);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tbody tr {
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  transition: background-color 0.15s ease-in-out;
+}
+
+.tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.tbody td {
+  padding: 12px 16px;
+  vertical-align: middle;
+}

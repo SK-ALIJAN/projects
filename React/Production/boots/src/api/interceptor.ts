@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios';
+import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import { axiosInstance } from './axiosInstance';
 import { storageService } from '../services/storage/storage.service';
 import { PersistenceStorageKey } from '../services/storage/PersistenceStorageKey';
@@ -24,7 +26,7 @@ const processQueue = (error: any, token: string | null = null) => {
 // REQUEST INTERCEPTOR
 // ===============================
 axiosInstance.interceptors.request.use(
-  (config) => {
+  (config: InternalAxiosRequestConfig) => {
     if (typeof window !== 'undefined') {
       const token = storageService.get<string>(
         'local',
@@ -38,18 +40,18 @@ axiosInstance.interceptors.request.use(
 
     return config;
   },
-  (error) => Promise.reject(error)
+  (error: AxiosError) => Promise.reject(error)
 );
 
 // ===============================
 // RESPONSE INTERCEPTOR
 // ===============================
 axiosInstance.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    const originalRequest = error.config;
+  (response: AxiosResponse) => response,
+  async (error: AxiosError) => {
+    const originalRequest = error.config as any;
 
-    if (typeof window === 'undefined') {
+    if (!originalRequest || typeof window === 'undefined') {
       return Promise.reject(error);
     }
 

@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.groupLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-muted, #4b5563);
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color, #d1d5db);
+  outline: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.labelText {
+  font-size: 0.875rem;
+  color: var(--text, #111827);
+  font-weight: 500;
+}
+
+.error {
+  border-color: #dc2626;
+}
+
+.errorText {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}

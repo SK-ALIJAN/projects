@@ -74,10 +74,12 @@ export const ThemeProvider = ({
   }, [isSystemDark]);
 
   const applyTheme = (value: Theme) => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      value
-    );
+    document.documentElement.setAttribute("data-theme", value);
+    if (value === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   const setTheme = (value: Theme) => {

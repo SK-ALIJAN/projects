@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { config } from '../config';
 
 export const axiosInstance = axios.create({
-    baseURL: import.meta.env.PUBLIC_API_URL,
+    baseURL: config.apiUrl,
     withCredentials: true, // Important for cookies
     headers: {
         'Content-Type': 'application/json',

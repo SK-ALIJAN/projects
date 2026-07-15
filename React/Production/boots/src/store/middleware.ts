@@ -5,7 +5,7 @@ import { type Middleware } from '@reduxjs/toolkit';
  * Logs actions in development
  */
 export const loggerMiddleware: Middleware =
-  (store) => (next) => (action) => {
+  (_store) => (next) => (action) => {
     if (import.meta.env.DEV) {
       console.log('Dispatching:', action);
     }

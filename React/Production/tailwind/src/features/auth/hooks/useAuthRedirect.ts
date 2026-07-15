@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import type { RootState } from '../../../store/rootReducer';
+import { useAppSelector } from '../../../store/store';
 import { ROUTES } from '../../../routes/routePaths';
-import { useSelector } from 'react-redux';
 
 type Mode = 'protected' | 'guest';
 
 export const useAuthRedirect = (mode: Mode) => {
     const navigate = useNavigate();
-    const { isAuthenticated } = useSelector(
-        (state: RootState) => state.auth
+    const { isAuthenticated } = useAppSelector(
+        (state) => state.auth
     );
 
     useEffect(() => {

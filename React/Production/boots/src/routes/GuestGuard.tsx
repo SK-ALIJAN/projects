@@ -1,10 +1,11 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { ROUTES } from './routePaths';
+import { useAppSelector } from '../store/store';
 
 const GuestGuard = () => {
-    const isLogin = false; // this should be replace with redux or context api
+    const { isAuthenticated } = useAppSelector((state) => state.auth);
 
-    if (isLogin) {
+    if (isAuthenticated) {
         return <Navigate to={ROUTES.HOME} replace />;
     }
 

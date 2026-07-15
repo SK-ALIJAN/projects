@@ -1,17 +1,16 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../../../store/store';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../authSlice';
-import type { RootState } from '../../../store/rootReducer';
 import type { LoginPayload } from '../types';
 import { ROUTES } from '../../../routes/routePaths';
 
 
 export const useLogin = () => {
-    const dispatch = useDispatch<any>();
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    const { isLoading, error, isAuthenticated } = useSelector(
-        (state: RootState) => state.auth
+    const { isLoading, error, isAuthenticated } = useAppSelector(
+        (state) => state.auth
     );
 
     const handleLogin = async (values: LoginPayload) => {

@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.pageBtn {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  color: var(--text, #374151);
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-color: var(--text-muted, #9ca3af);
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.active {
+  background-color: var(--primary, #2563eb);
+  color: #fff;
+  border-color: var(--primary, #2563eb);
+}
