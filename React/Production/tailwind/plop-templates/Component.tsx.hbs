@@ -1,0 +1,15 @@
+import React from 'react';
+
+interface {{pascalCase name}}CardProps {
+    title: string;
+    description?: string;
+}
+
+export const {{pascalCase name}}Card: React.FC<{{pascalCase name}}CardProps> = ({ title, description }) => {
+    return (
+        <div className="p-4 border border-gray-200 rounded-lg shadow-sm bg-white mb-4">
+            <h3 className="font-semibold text-lg text-gray-800">{title}</h3>
+            {description && <p className="text-sm text-gray-500 mt-1">{description}</p>}
+        </div>
+    );
+};

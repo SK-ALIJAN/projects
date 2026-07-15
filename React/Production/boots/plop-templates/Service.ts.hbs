@@ -1,0 +1,17 @@
+import { axiosInstance } from '@/api/axiosInstance';
+
+export interface {{pascalCase name}}Data {
+    id: string;
+    name: string;
+    createdAt: string;
+}
+
+export const fetch{{pascalCase name}}List = async (): Promise<{{pascalCase name}}Data[]> => {
+    const response = await axiosInstance.get<{{pascalCase name}}Data[]>('/{{kebabCase name}}');
+    return response.data;
+};
+
+export const create{{pascalCase name}}Item = async (data: Omit<{{pascalCase name}}Data, 'id' | 'createdAt'>): Promise<{{pascalCase name}}Data> => {
+    const response = await axiosInstance.post<{{pascalCase name}}Data>('/{{kebabCase name}}', data);
+    return response.data;
+};
