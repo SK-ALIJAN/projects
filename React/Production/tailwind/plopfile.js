@@ -29,6 +29,20 @@ export default function (plop) {
                 path: 'src/features/{{camelCase name}}/{{camelCase name}}Slice.ts',
                 templateFile: 'plop-templates/Slice.ts.hbs',
             },
+            {
+                type: 'add',
+                path: 'src/features/{{camelCase name}}/index.ts',
+                template: `export { default as {{pascalCase name}}Page } from './pages/{{pascalCase name}}Page';
+export * from './components/{{pascalCase name}}Card';
+export {
+  default as {{camelCase name}}Reducer,
+  setItems,
+  setLoading,
+  setError
+} from './{{camelCase name}}Slice';
+export * from './services/{{camelCase name}}Service';
+`,
+            },
         ],
     });
 }

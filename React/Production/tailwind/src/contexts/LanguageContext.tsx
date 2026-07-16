@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import i18n from '../i18n';
-import { storageService } from '../services/storage/storage.service';
-import { PersistenceStorageKey } from '../services/storage/PersistenceStorageKey';
+import i18n from '@/i18n';
+import { storageService } from '@/services/storage/storage.service';
+import { PersistenceStorageKey } from '@/services/storage/PersistenceStorageKey';
 
 interface LanguageContextType {
   language: string;

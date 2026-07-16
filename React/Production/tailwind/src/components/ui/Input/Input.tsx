@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import styles from './input.module.css';
+import { cn } from '@/utils/cn';
 
 type InputTypes =
     | 'text'
@@ -52,23 +52,33 @@ const Input = (props: Props) => {
         containerClass = '',
     } = props;
 
+    const baseInputClass = cn(
+        'px-3 py-2.5 border rounded-md text-sm transition-colors duration-200 focus:outline-none focus:ring-1 bg-white',
+        error
+            ? 'border-danger focus:border-danger focus:ring-danger'
+            : 'border-gray-300 focus:border-primary focus:ring-primary',
+        className
+    );
+
     const renderField = () => {
         if (props.as === 'textarea') {
+            const { as, label, error, required, containerClass, ...textareaProps } = props;
             return (
                 <textarea
-                    {...props}
-                    className={`${styles.input} ${error ? styles.error : ''} ${className}`}
+                    {...textareaProps}
+                    className={baseInputClass}
                 />
             );
         }
 
         if (props.as === 'select') {
+            const { as, label, error, required, containerClass, options, ...selectProps } = props;
             return (
                 <select
-                    {...props}
-                    className={`${styles.input} ${error ? styles.error : ''} ${className}`}
+                    {...selectProps}
+                    className={baseInputClass}
                 >
-                    {props.options.map((opt) => (
+                    {options.map((opt) => (
                         <option key={opt.value} value={opt.value}>
                             {opt.label}
                         </option>
@@ -77,26 +87,27 @@ const Input = (props: Props) => {
             );
         }
 
+        const { as, label, error, required, containerClass, ...inputProps } = props as InputProps;
         return (
             <input
-                {...props}
-                className={`${styles.input} ${error ? styles.error : ''} ${className}`}
+                {...inputProps}
+                className={baseInputClass}
             />
         );
     };
 
     return (
-        <div className={`${styles.container} ${containerClass}`}>
+        <div className={cn('flex flex-col', containerClass)}>
             {label && (
-                <label className={styles.label}>
+                <label className="mb-1.5 text-sm font-medium text-gray-900 text-start">
                     {label}
-                    {required && <span className={styles.required}>*</span>}
+                    {required && <span className="text-danger ms-1">*</span>}
                 </label>
             )}
 
             {renderField()}
 
-            {error && <span className={styles.errorText}>{error}</span>}
+            {error && <span className="text-danger text-xs mt-1 text-start">{error}</span>}
         </div>
     );
 };

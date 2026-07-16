@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppSelector } from '../../../store/store';
-import { ROUTES } from '../../../routes/routePaths';
+import { useAppSelector } from '@/store/store';
+import { ROUTES } from '@/routes/routePaths';
 
 type Mode = 'protected' | 'guest';
 

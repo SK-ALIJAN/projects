@@ -1,9 +1,9 @@
 import { AxiosError } from 'axios';
 import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import { axiosInstance } from './axiosInstance';
-import { storageService } from '../services/storage/storage.service';
-import { PersistenceStorageKey } from '../services/storage/PersistenceStorageKey';
-import { errorHandler } from '../utils/ErrorHandler';
+import { storageService } from '@/services/storage/storage.service';
+import { PersistenceStorageKey } from '@/services/storage/PersistenceStorageKey';
+import { errorHandler } from '@/utils/ErrorHandler';
 
 // Prevent multiple refresh calls
 let isRefreshing = false;

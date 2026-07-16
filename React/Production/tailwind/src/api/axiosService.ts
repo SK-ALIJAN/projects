@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import { axiosInstance } from './axiosInstance';
-import { storageService } from '../services/storage/storage.service';
-import { PersistenceStorageKey } from '../services/storage/PersistenceStorageKey';
+import { storageService } from '@/services/storage/storage.service';
+import { PersistenceStorageKey } from '@/services/storage/PersistenceStorageKey';
 
 /**
  * Optional request configuration

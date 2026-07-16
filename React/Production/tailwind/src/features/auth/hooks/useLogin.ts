@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from '../../../store/store';
+import { useAppDispatch, useAppSelector } from '@/store/store';
 import { useNavigate } from 'react-router-dom';
-import { loginUser } from '../authSlice';
-import type { LoginPayload } from '../types';
-import { ROUTES } from '../../../routes/routePaths';
+import { loginUser } from '@/features/auth';
+import type { LoginPayload } from '@/features/auth';
+import { ROUTES } from '@/routes/routePaths';
 
 
 export const useLogin = () => {

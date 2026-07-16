@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../store/store';
-import { logout } from '../features/auth/authSlice';
+import { useAppDispatch, useAppSelector } from '@/store/store';
+import { logout } from '@/features/auth';
 
 export const useAuth = () => {
     const dispatch = useAppDispatch();

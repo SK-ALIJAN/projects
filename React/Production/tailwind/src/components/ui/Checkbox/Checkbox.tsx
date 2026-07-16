@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from '@/utils/cn';
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
@@ -16,12 +17,16 @@ const Checkbox: React.FC<CheckboxProps> = ({
             <label className="inline-flex items-center cursor-pointer select-none">
                 <input
                     type="checkbox"
-                    className={`w-4 h-4 rounded text-blue-600 border-gray-300 focus:ring-blue-500 cursor-pointer mr-2 ${error ? 'border-red-500' : ''} ${className}`}
+                    className={cn(
+                        'w-4 h-4 rounded text-primary border-gray-300 focus:ring-primary cursor-pointer me-2',
+                        error && 'border-danger',
+                        className
+                    )}
                     {...props}
                 />
                 {label && <span className="text-sm text-gray-900 font-medium">{label}</span>}
             </label>
-            {error && <span className="text-red-500 text-xs mt-1">{error}</span>}
+            {error && <span className="text-danger text-xs mt-1 text-start">{error}</span>}
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import { apiService } from "../../../api/axiosService";
+import { apiService } from '@/api/axiosService';
 import { AUTH_ENDPOINTS } from "../contstants";
 import type { LoginPayload, RegisterPayload, User } from "../types";
 

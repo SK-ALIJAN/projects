@@ -1,6 +1,6 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import { ROUTES } from './routePaths';
-import { useAppSelector } from '../store/store';
+import { ROUTES } from '@/routes/routePaths';
+import { useAppSelector } from '@/store/store';
 
 const AuthGuard = () => {
     const { isAuthenticated } = useAppSelector((state) => state.auth);

@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import authReducer from '../features/auth/authSlice';
+import { authReducer } from '@/features/auth';
 
 // Add more feature reducers here
 // import productReducer from '../features/product/productSlice';

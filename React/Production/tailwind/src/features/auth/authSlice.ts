@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { authService } from './services/authService';
-import { storageService } from '../../services/storage/storage.service';
-import { PersistenceStorageKey } from '../../services/storage/PersistenceStorageKey';
+import { storageService } from '@/services/storage/storage.service';
+import { PersistenceStorageKey } from '@/services/storage/PersistenceStorageKey';
 import type { AuthState, User } from './types';
 
 

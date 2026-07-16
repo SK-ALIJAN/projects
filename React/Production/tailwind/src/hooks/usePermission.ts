@@ -1,4 +1,4 @@
-import { useAppSelector } from '../store/store';
+import { useAppSelector } from '@/store/store';
 
 export const usePermission = () => {
     const { user } = useAppSelector((state) => state.auth);

@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from '../../../store/store';
+import { useAppDispatch, useAppSelector } from '@/store/store';
 import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../authSlice';
-import type { RegisterPayload } from '../types';
-import { ROUTES } from '../../../routes/routePaths';
+import { registerUser } from '@/features/auth';
+import type { RegisterPayload } from '@/features/auth';
+import { ROUTES } from '@/routes/routePaths';
 
 
 export const useRegister = () => {

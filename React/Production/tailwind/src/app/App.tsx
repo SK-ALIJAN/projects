@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
-import AppProviders from './AppProviders'
-import AppRoutes from '../routes/AppRoutes'
+import AppProviders from '@/app/AppProviders';
+import AppRoutes from '@/routes/AppRoutes';
 
 
 

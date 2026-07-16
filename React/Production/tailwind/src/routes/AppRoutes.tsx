@@ -1,20 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
-import MainLayout from '../layouts/MainLayout';
-import AuthLayout from '../layouts/AuthLayout';
-// import AdminLayout from '../layouts/AdminLayout';
+import MainLayout from '@/layouts/MainLayout';
+import AuthLayout from '@/layouts/AuthLayout';
+// import AdminLayout from '@/layouts/AdminLayout';
 
 // import AdminGuard from './AdminGuard';
 import GuestGuard from './GuestGuard';
 import { ROUTES } from './routePaths';
-import NotFound from '../features/404/pages/404';
+import { NotFound } from '@/features/404';
 
-// Lazy load pages
-const Home = lazy(() => import('../features/home/pages/Home'));
-const Login = lazy(() => import('../features/auth/pages/login/Login'));
-const Register = lazy(() => import('../features/auth/pages/register/Register'));
-const Unauthorized = lazy(() => import('../features/auth/pages/Unauthorized'));
+// Lazy load pages from barrel files using path mappings
+const Home = lazy(() => import('@/features/home').then(module => ({ default: module.Home })));
+const Login = lazy(() => import('@/features/auth').then(module => ({ default: module.Login })));
+const Register = lazy(() => import('@/features/auth').then(module => ({ default: module.Register })));
+const Unauthorized = lazy(() => import('@/features/auth').then(module => ({ default: module.Unauthorized })));
 
 
 const AppRoutes = () => {
