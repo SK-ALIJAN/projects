@@ -1,7 +1,63 @@
 {
-    "common": {
-        "welcome": "Bienvenue",
-        "login": "Connexion",
-        "logout": "Déconnexion"
-    }
+  "common": {
+    "welcome": "Bienvenue",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "loading": "Chargement...",
+    "search": "Rechercher...",
+    "selectLanguage": "Choisir la langue",
+    "actions": "Actions",
+    "confirm": "Confirmer",
+    "back": "Retour",
+    "close": "Fermer",
+    "allRightsReserved": "Tous droits réservés."
+  },
+  "auth": {
+    "welcomeBack": "Bon retour parmi nous",
+    "signInToAccount": "Connectez-vous à votre compte entreprise",
+    "emailAddress": "Adresse e-mail",
+    "password": "Mot de passe",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "dontHaveAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire",
+    "loginSuccess": "Connexion réussie"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "settings": "Paramètres",
+    "users": "Gestion des utilisateurs",
+    "profile": "Profil",
+    "reports": "Rapports",
+    "analytics": "Analytique"
+  },
+  "dashboard": {
+    "totalUsers": "Utilisateurs totaux",
+    "activeSessions": "Sessions actives",
+    "revenue": "Chiffre d'affaires",
+    "growth": "Taux de croissance",
+    "metrics": "Indicateurs clés de performance",
+    "overview": "Aperçu du système"
+  },
+  "errors": {
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion.",
+    "unauthorized": "Vous n'êtes pas autorisé à effectuer cette action.",
+    "forbidden": "Accès interdit.",
+    "notFound": "Ressource demandée introuvable.",
+    "serverError": "Erreur interne du serveur. Veuillez réessayer plus tard.",
+    "genericError": "Une erreur inattendue est survenue.",
+    "tryAgain": "Réessayer"
+  },
+  "validation": {
+    "required": "{{field}} est obligatoire.",
+    "invalidEmail": "Veuillez entrer une adresse e-mail valide.",
+    "minLength": "{{field}} doit contenir au moins {{min}} caractères.",
+    "maxLength": "{{field}} ne peut pas dépasser {{max}} caractères.",
+    "passwordMismatch": "Les mots de passe ne correspondent pas."
+  }
 }

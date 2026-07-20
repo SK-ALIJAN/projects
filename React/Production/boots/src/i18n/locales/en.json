@@ -2,6 +2,62 @@
   "common": {
     "welcome": "Welcome",
     "login": "Login",
-    "logout": "Logout"
+    "logout": "Logout",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading...",
+    "search": "Search...",
+    "selectLanguage": "Select Language",
+    "actions": "Actions",
+    "confirm": "Confirm",
+    "back": "Back",
+    "close": "Close",
+    "allRightsReserved": "All rights reserved."
+  },
+  "auth": {
+    "welcomeBack": "Welcome Back",
+    "signInToAccount": "Sign in to your enterprise account",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "dontHaveAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "loginSuccess": "Successfully logged in"
+  },
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "users": "Users Management",
+    "profile": "Profile",
+    "reports": "Reports",
+    "analytics": "Analytics"
+  },
+  "dashboard": {
+    "totalUsers": "Total Users",
+    "activeSessions": "Active Sessions",
+    "revenue": "Revenue",
+    "growth": "Growth Rate",
+    "metrics": "Key Performance Metrics",
+    "overview": "System Overview"
+  },
+  "errors": {
+    "networkError": "Network error. Please check your connection.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "forbidden": "Access forbidden.",
+    "notFound": "Requested resource not found.",
+    "serverError": "Internal server error. Please try again later.",
+    "genericError": "An unexpected error occurred.",
+    "tryAgain": "Try Again"
+  },
+  "validation": {
+    "required": "{{field}} is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "minLength": "{{field}} must be at least {{min}} characters.",
+    "maxLength": "{{field}} cannot exceed {{max}} characters.",
+    "passwordMismatch": "Passwords do not match."
   }
 }

@@ -1,0 +1,63 @@
+{
+  "common": {
+    "welcome": "Willkommen",
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "loading": "Laden...",
+    "search": "Suchen...",
+    "selectLanguage": "Sprache auswählen",
+    "actions": "Aktionen",
+    "confirm": "Bestätigen",
+    "back": "Zurück",
+    "close": "Schließen",
+    "allRightsReserved": "Alle Rechte vorbehalten."
+  },
+  "auth": {
+    "welcomeBack": "Willkommen zurück",
+    "signInToAccount": "Melden Sie sich bei Ihrem Unternehmenskonto an",
+    "emailAddress": "E-Mail-Adresse",
+    "password": "Passwort",
+    "rememberMe": "Angemeldet bleiben",
+    "forgotPassword": "Passwort vergessen?",
+    "dontHaveAccount": "Noch kein Konto?",
+    "signUp": "Registrieren",
+    "loginSuccess": "Erfolgreich angemeldet"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "dashboard": "Dashboard",
+    "settings": "Einstellungen",
+    "users": "Benutzerverwaltung",
+    "profile": "Profil",
+    "reports": "Berichte",
+    "analytics": "Analysen"
+  },
+  "dashboard": {
+    "totalUsers": "Gesamtbenutzer",
+    "activeSessions": "Aktive Sitzungen",
+    "revenue": "Umsatz",
+    "growth": "Wachstumsrate",
+    "metrics": "Wichtige Leistungsindikatoren",
+    "overview": "Systemübersicht"
+  },
+  "errors": {
+    "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung.",
+    "unauthorized": "Sie sind nicht berechtigt, diese Aktion auszuführen.",
+    "forbidden": "Zugriff verweigert.",
+    "notFound": "Angeforderte Ressource nicht gefunden.",
+    "serverError": "Interner Serverfehler. Bitte versuchen Sie es später erneut.",
+    "genericError": "Ein unerwarteter Fehler ist aufgetreten.",
+    "tryAgain": "Erneut versuchen"
+  },
+  "validation": {
+    "required": "{{field}} ist erforderlich.",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "minLength": "{{field}} muss mindestens {{min}} Zeichen lang sein.",
+    "maxLength": "{{field}} darf maximal {{max}} Zeichen lang sein.",
+    "passwordMismatch": "Die Passwörter stimmen nicht überein."
+  }
+}

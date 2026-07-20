@@ -2,6 +2,62 @@
   "common": {
     "welcome": "Bienvenido",
     "login": "Iniciar sesión",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "loading": "Cargando...",
+    "search": "Buscar...",
+    "selectLanguage": "Seleccionar idioma",
+    "actions": "Acciones",
+    "confirm": "Confirmar",
+    "back": "Volver",
+    "close": "Cerrar",
+    "allRightsReserved": "Todos los derechos reservados."
+  },
+  "auth": {
+    "welcomeBack": "Bienvenido de nuevo",
+    "signInToAccount": "Inicie sesión en su cuenta empresarial",
+    "emailAddress": "Correo electrónico",
+    "password": "Contraseña",
+    "rememberMe": "Recordarme",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "dontHaveAccount": "¿No tiene una cuenta?",
+    "signUp": "Registrarse",
+    "loginSuccess": "Sesión iniciada con éxito"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "dashboard": "Panel de control",
+    "settings": "Configuración",
+    "users": "Gestión de usuarios",
+    "profile": "Perfil",
+    "reports": "Informes",
+    "analytics": "Análisis"
+  },
+  "dashboard": {
+    "totalUsers": "Usuarios totales",
+    "activeSessions": "Sesiones activas",
+    "revenue": "Ingresos",
+    "growth": "Tasa de crecimiento",
+    "metrics": "Métricas clave de rendimiento",
+    "overview": "Visión general del sistema"
+  },
+  "errors": {
+    "networkError": "Error de red. Por favor compruebe su conexión.",
+    "unauthorized": "No está autorizado para realizar esta acción.",
+    "forbidden": "Acceso prohibido.",
+    "notFound": "Recurso solicitado no encontrado.",
+    "serverError": "Error interno del servidor. Por favor intente más tarde.",
+    "genericError": "Ha ocurrido un error inesperado.",
+    "tryAgain": "Intentar de nuevo"
+  },
+  "validation": {
+    "required": "{{field}} es obligatorio.",
+    "invalidEmail": "Ingrese un correo electrónico válido.",
+    "minLength": "{{field}} debe tener al menos {{min}} caracteres.",
+    "maxLength": "{{field}} no puede superar {{max}} caracteres.",
+    "passwordMismatch": "Las contraseñas no coinciden."
   }
 }

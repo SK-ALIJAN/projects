@@ -1,0 +1,63 @@
+{
+  "common": {
+    "welcome": "مرحباً",
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "loading": "جارٍ التحميل...",
+    "search": "بحث...",
+    "selectLanguage": "اختر اللغة",
+    "actions": "الإجراءات",
+    "confirm": "تأكيد",
+    "back": "رجوع",
+    "close": "إغلاق",
+    "allRightsReserved": "جميع الحقوق محفوظة."
+  },
+  "auth": {
+    "welcomeBack": "مرحباً بعودتك",
+    "signInToAccount": "تسجيل الدخول إلى حساب المؤسسة الخاص بك",
+    "emailAddress": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب",
+    "loginSuccess": "تم تسجيل الدخول بنجاح"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "dashboard": "لوحة التحكم",
+    "settings": "الإعدادات",
+    "users": "إدارة المستخدمين",
+    "profile": "الملف الشخصي",
+    "reports": "التقارير",
+    "analytics": "التحليلات"
+  },
+  "dashboard": {
+    "totalUsers": "إجمالي المستخدمين",
+    "activeSessions": "الجلسات النشطة",
+    "revenue": "الإيرادات",
+    "growth": "معدل النمو",
+    "metrics": "مؤشرات الأداء الرئيسية",
+    "overview": "نظرة عامة على النظام"
+  },
+  "errors": {
+    "networkError": "خطأ في الشبكة. يرجى التحقق من اتصالك.",
+    "unauthorized": "ليس لديك صلاحية لتنفيذ هذا الإجراء.",
+    "forbidden": "الوصول محظور.",
+    "notFound": "المورد المطلوب غير موجود.",
+    "serverError": "خطأ داخلي في الخادم. يرجى المحاولة لاحقاً.",
+    "genericError": "حدث خطأ غير متوقع.",
+    "tryAgain": "إعادة المحاولة"
+  },
+  "validation": {
+    "required": "{{field}} مطلوب.",
+    "invalidEmail": "يرجى إدخال بريد إلكتروني صحيح.",
+    "minLength": "يجب أن يتكون {{field}} من {{min}} أحرف على الأقل.",
+    "maxLength": "لا يمكن أن يتجاوز {{field}} {{max}} أحرف.",
+    "passwordMismatch": "كلمتا المرور غير متطابقتين."
+  }
+}
