@@ -1,13 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
 import './api/interceptor';
-import App from './app/App.tsx'
+import App from './app/App.tsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import ErrorBoundary from './components/feedback/error/ErrorBoundary.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </StrictMode>,
-)
+);

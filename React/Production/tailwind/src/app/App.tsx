@@ -1,20 +1,18 @@
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
-import AppProviders from '@/app/AppProviders';
-import AppRoutes from '@/routes/AppRoutes';
-
-
+import AppProviders from './AppProviders'
+import AppRoutes from '../routes/AppRoutes'
+import ErrorBoundary from '../components/feedback/error/ErrorBoundary'
 
 function App() {
-
   return (
-    <BrowserRouter>
-      <AppProviders>
-        <AppRoutes />
-      </AppProviders>
-    </BrowserRouter>
-
-
+    <ErrorBoundary>
+      <BrowserRouter>
+        <AppProviders>
+          <AppRoutes />
+        </AppProviders>
+      </BrowserRouter>
+    </ErrorBoundary>
   )
 }
 
