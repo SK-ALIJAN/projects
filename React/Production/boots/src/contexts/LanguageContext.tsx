@@ -11,17 +11,17 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguageState] = useState<string>('en');
+  const [language, setLanguageState] = useState<string>(() => {
+    return (
+      storageService.get<string>('local', PersistenceStorageKey.LANGUAGE) ||
+      (typeof navigator !== 'undefined' ? navigator.language.split('-')[0] : 'en') ||
+      'en'
+    );
+  });
 
   useEffect(() => {
-    const storedLang =
-      storageService.get<string>('local', PersistenceStorageKey.LANGUAGE) ||
-      navigator.language.split('-')[0] ||
-      'en';
-
-    setLanguageState(storedLang);
-    i18n.changeLanguage(storedLang);
-  }, []);
+    i18n.changeLanguage(language);
+  }, [language]);
 
   const setLanguage = (lang: string) => {
     setLanguageState(lang);
@@ -36,6 +36,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) throw new Error('useLanguage must be used inside LanguageProvider');

@@ -7,7 +7,7 @@ export const usePermission = () => {
         if (!user) return false;
         if (user.role === 'admin') return true;
         
-        const permissions: string[] = (user as any).permissions || [];
+        const permissions: string[] = (user as { permissions?: string[] })?.permissions || [];
         return permissions.includes(permission);
     };
 

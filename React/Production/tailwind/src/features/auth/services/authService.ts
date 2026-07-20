@@ -1,5 +1,5 @@
-import { apiService } from '@/api/axiosService';
-import { AUTH_ENDPOINTS } from "../contstants";
+import { apiService } from "../../../api/axiosService";
+import { AUTH_ENDPOINTS } from "../constants";
 import type { LoginPayload, RegisterPayload, User } from "../types";
 
 
@@ -29,6 +29,6 @@ export const authService = {
     },
 
     logout: async (): Promise<void> => {
-        await apiService.postCall<void, {}>(AUTH_ENDPOINTS.LOGOUT, {});
+        await apiService.postCall<void, Record<string, never>>(AUTH_ENDPOINTS.LOGOUT, {});
     },
 };

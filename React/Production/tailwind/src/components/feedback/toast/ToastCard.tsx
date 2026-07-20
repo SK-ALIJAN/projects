@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import toast, { type Toast } from "react-hot-toast";
 import { TOAST_STYLES } from "./toast.config";
 import { TOAST_ICONS } from "./toast.icons";
 import type { ShowToastOptions } from "./toast.types";
 
 interface Props {
-    toastRef: any;
+    toastRef: Toast;
     options: ShowToastOptions;
 }
 

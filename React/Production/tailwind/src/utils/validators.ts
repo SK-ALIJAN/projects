@@ -9,7 +9,6 @@ export const isValidEmail = (email: string): boolean => {
 
 
 
-
 export const getPasswordStrength = (password: string) => {
     const strength = {
         hasMinLength: password.length >= 8,

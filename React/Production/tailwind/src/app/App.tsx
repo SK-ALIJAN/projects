@@ -6,13 +6,14 @@ import AppRoutes from '@/routes/AppRoutes';
 
 
 function App() {
+
   return (
-  <BrowserRouter>
+    <BrowserRouter>
       <AppProviders>
         <AppRoutes />
       </AppProviders>
     </BrowserRouter>
-   
+
 
   )
 }

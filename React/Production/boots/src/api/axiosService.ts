@@ -31,7 +31,7 @@ class APIServices {
     if (config?.showSuccess) {
       const msg =
         config.successMessage ||
-        (response as any)?.message ||
+        ((response as Record<string, unknown>)?.message as string) ||
         'Success';
 
       message.success(msg);

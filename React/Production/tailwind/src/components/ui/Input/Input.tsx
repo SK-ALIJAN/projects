@@ -43,6 +43,16 @@ interface SelectProps
 
 type Props = InputProps | TextareaProps | SelectProps;
 
+const omitBaseProps = <T extends Record<string, unknown>>(obj: T) => {
+    const copy = { ...obj };
+    delete copy.label;
+    delete copy.error;
+    delete copy.required;
+    delete copy.containerClass;
+    delete copy.as;
+    return copy;
+};
+
 const Input = (props: Props) => {
     const {
         label,
@@ -62,20 +72,21 @@ const Input = (props: Props) => {
 
     const renderField = () => {
         if (props.as === 'textarea') {
-            const { as, label, error, required, containerClass, ...textareaProps } = props;
+            const textareaProps = omitBaseProps(props as unknown as Record<string, unknown>);
             return (
                 <textarea
-                    {...textareaProps}
+                    {...(textareaProps as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
                     className={baseInputClass}
                 />
             );
         }
 
         if (props.as === 'select') {
-            const { as, label, error, required, containerClass, options, ...selectProps } = props;
+            const { options, ...rest } = props;
+            const selectProps = omitBaseProps(rest as unknown as Record<string, unknown>);
             return (
                 <select
-                    {...selectProps}
+                    {...(selectProps as React.SelectHTMLAttributes<HTMLSelectElement>)}
                     className={baseInputClass}
                 >
                     {options.map((opt) => (
@@ -87,10 +98,10 @@ const Input = (props: Props) => {
             );
         }
 
-        const { as, label, error, required, containerClass, ...inputProps } = props as InputProps;
+        const inputProps = omitBaseProps(props as unknown as Record<string, unknown>);
         return (
             <input
-                {...inputProps}
+                {...(inputProps as React.InputHTMLAttributes<HTMLInputElement>)}
                 className={baseInputClass}
             />
         );

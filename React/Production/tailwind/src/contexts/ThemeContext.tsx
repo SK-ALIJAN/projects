@@ -11,16 +11,22 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 
 type Theme = "light" | "dark";
 
+const applyTheme = (value: Theme) => {
+  document.documentElement.setAttribute("data-theme", value);
+  if (value === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+};
+
 interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 }
 
-const ThemeContext =
-  createContext<ThemeContextType | undefined>(
-    undefined
-  );
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({
   children,
@@ -28,59 +34,20 @@ export const ThemeProvider = ({
   children: React.ReactNode;
 }) => {
   // Detect system dark mode
-  const isSystemDark = useMediaQuery(
-    "(prefers-color-scheme: dark)"
-  );
+  const isSystemDark = useMediaQuery("(prefers-color-scheme: dark)");
 
-  const [theme, setThemeState] = useState<Theme>("light");
+  const [theme, setThemeState] = useState<Theme>(() => {
+    const storedTheme = storageService.get<Theme>(
+      "local",
+      PersistenceStorageKey.THEME
+    );
+    if (storedTheme) return storedTheme;
+    return isSystemDark ? "dark" : "light";
+  });
 
-  // Load initial theme
   useEffect(() => {
-    const storedTheme =
-      storageService.get<Theme>(
-        "local",
-        PersistenceStorageKey.THEME
-      );
-
-    if (storedTheme) {
-      setThemeState(storedTheme);
-      applyTheme(storedTheme);
-    } else {
-      const systemTheme: Theme = isSystemDark
-        ? "dark"
-        : "light";
-
-      setThemeState(systemTheme);
-      applyTheme(systemTheme);
-    }
-  }, []);
-
-  // Sync with system theme (only if user didn't override)
-  useEffect(() => {
-    const storedTheme =
-      storageService.get<Theme>(
-        "local",
-        PersistenceStorageKey.THEME
-      );
-
-    if (!storedTheme) {
-      const systemTheme: Theme = isSystemDark
-        ? "dark"
-        : "light";
-
-      setThemeState(systemTheme);
-      applyTheme(systemTheme);
-    }
-  }, [isSystemDark]);
-
-  const applyTheme = (value: Theme) => {
-    document.documentElement.setAttribute("data-theme", value);
-    if (value === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
+    applyTheme(theme);
+  }, [theme]);
 
   const setTheme = (value: Theme) => {
     setThemeState(value);
@@ -107,6 +74,7 @@ export const ThemeProvider = ({
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
   const context = useContext(ThemeContext);
 
@@ -118,3 +86,4 @@ export const useTheme = () => {
 
   return context;
 };
+

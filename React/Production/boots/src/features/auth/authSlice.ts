@@ -44,8 +44,9 @@ export const loginUser = createAsyncThunk(
       );
 
       return response;
-    } catch (error: any) {
-      return rejectWithValue(error.response?.data?.message || 'Login failed');
+    } catch (error: unknown) {
+      const err = error as { response?: { data?: { message?: string } } };
+      return rejectWithValue(err.response?.data?.message || 'Login failed');
     }
   }
 );
@@ -60,9 +61,10 @@ export const registerUser = createAsyncThunk(
     try {
       const response = await authService.register(payload);
       return response;
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const err = error as { response?: { data?: { message?: string } } };
       return rejectWithValue(
-        error.response?.data?.message || 'Registration failed'
+        err.response?.data?.message || 'Registration failed'
       );
     }
   }
@@ -75,7 +77,7 @@ export const fetchProfile = createAsyncThunk(
     try {
       const response = await authService.getProfile();
       return response;
-    } catch (error: any) {
+    } catch {
       return rejectWithValue('Failed to fetch profile');
     }
   }

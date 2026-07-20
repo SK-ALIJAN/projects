@@ -74,7 +74,7 @@ class ErrorBoundary extends Component<Props, State> {
      * Used for logging error details to monitoring
      * services like Sentry, LogRocket, etc.
      */
-    componentDidCatch(error: Error, info: any) {
+    componentDidCatch(error: Error, info: React.ErrorInfo) {
         console.error("Runtime Error Caught:", error, info);
     }
 

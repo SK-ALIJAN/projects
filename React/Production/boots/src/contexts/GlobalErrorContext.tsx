@@ -14,7 +14,7 @@ interface ContextType {
 
 const GlobalErrorContext = createContext<ContextType | null>(null);
 
-export const GlobalErrorProvider = ({ children }: any) => {
+export const GlobalErrorProvider = ({ children }: { children: React.ReactNode }) => {
     const [error, setError] = useState<GlobalErrorState | null>(null);
 
     // Register setter globally
@@ -27,6 +27,7 @@ export const GlobalErrorProvider = ({ children }: any) => {
     );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useGlobalError = () => {
     const context = useContext(GlobalErrorContext);
     if (!context) throw new Error("Must be used inside GlobalErrorProvider");

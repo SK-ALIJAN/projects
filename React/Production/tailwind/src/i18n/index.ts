@@ -7,12 +7,12 @@ const locales = import.meta.glob('./locales/*.json');
 const dynamicBackend = {
   type: 'backend' as const,
   init() {},
-  read(language: string, _namespace: string, callback: (err: Error | null, data: any) => void) {
+  read(language: string, _namespace: string, callback: (err: Error | null, data: Record<string, unknown> | null) => void) {
     const key = `./locales/${language}.json`;
     if (locales[key]) {
       locales[key]()
-        .then((module: any) => {
-          callback(null, module.default);
+        .then((module) => {
+          callback(null, (module as { default: Record<string, unknown> }).default);
         })
         .catch((err) => {
           callback(err instanceof Error ? err : new Error(String(err)), null);

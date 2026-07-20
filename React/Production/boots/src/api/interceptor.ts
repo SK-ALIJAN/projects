@@ -9,11 +9,11 @@ import { errorHandler } from '../utils/ErrorHandler';
 let isRefreshing = false;
 
 let failedQueue: {
-  resolve: (value?: any) => void;
-  reject: (error?: any) => void;
+  resolve: (value?: unknown) => void;
+  reject: (error?: unknown) => void;
 }[] = [];
 
-const processQueue = (error: any, token: string | null = null) => {
+const processQueue = (error: unknown, token: string | null = null) => {
   failedQueue.forEach((prom) => {
     if (error) prom.reject(error);
     else prom.resolve(token);
@@ -49,7 +49,7 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => response,
   async (error: AxiosError) => {
-    const originalRequest = error.config as any;
+    const originalRequest = error.config as (InternalAxiosRequestConfig & { _retry?: boolean });
 
     if (!originalRequest || typeof window === 'undefined') {
       return Promise.reject(error);
